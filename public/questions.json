@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "choices": ["A. Paris", "B. Berlin", "C. Madrid", "D. Rome"],
+    "correctAnswer": "A",
+    "timeLimit": 5
+  },
+  {
+    "question": "What is 2 + 2?",
+    "choices": ["A. 3", "B. 4", "C. 5", "D. 6"],
+    "correctAnswer": "B",
+    "timeLimit": 3
+  }
+]
