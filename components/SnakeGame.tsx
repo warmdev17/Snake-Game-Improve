@@ -127,14 +127,28 @@ export default function SnakeGame() {
 
   const handleQuestionAnswer = (answer: string) => {
     if (timerRef.current) clearInterval(timerRef.current);
+
     if (currentQuestion && answer === currentQuestion.correctAnswer) {
+      // Correct answer: Add 10 points
       setScore((prevScore) => prevScore + 10);
       setScores((prevScores) => {
         const updatedScores = [...prevScores];
         updatedScores[currentGroup] += 10;
         return updatedScores;
       });
+    } else {
+      // Incorrect answer or time up: Deduct 5 points
+      setScore((prevScore) => prevScore - 5); // Ensure score doesn't go negative
+      setScores((prevScores) => {
+        const updatedScores = [...prevScores];
+        updatedScores[currentGroup] = Math.max(
+          updatedScores[currentGroup] - 5,
+          0,
+        ); // Avoid negative score
+        return updatedScores;
+      });
     }
+
     setShowQuestion(false);
     generateFood();
   };
@@ -199,8 +213,11 @@ export default function SnakeGame() {
 
   const handleKeyPress = (event: KeyboardEvent<HTMLDivElement>) => {
     if (showQuestion) {
-      if (["a", "b", "c", "d"].includes(event.key.toLowerCase())) {
-        handleQuestionAnswer(event.key.toUpperCase());
+      if (["1", "2", "3", "4"].includes(event.key)) {
+        const choiceIndex = parseInt(event.key) - 1;
+        if (currentQuestion) {
+          handleQuestionAnswer(currentQuestion.choices[choiceIndex]);
+        }
       }
     } else {
       if (event.key === "ArrowUp" && direction !== "DOWN") setDirection("UP");
@@ -227,7 +244,7 @@ export default function SnakeGame() {
             ))}
           </div>
           <div className="text-white bg-green-500 rounded text-lg w-[260px] text-center">
-            Turn: {currentTurn} - Nhóm: {currentGroup + 1}
+            Lượt: {currentTurn} - Nhóm: {currentGroup + 1}
           </div>
           <div className="text-white text-xl">Điểm hiện tại: {score}</div>
           <div
@@ -250,15 +267,22 @@ export default function SnakeGame() {
             )}
             {showQuestion && currentQuestion && (
               <div className="absolute inset-0 flex flex-col justify-center items-center bg-gray-800 bg-opacity-75 text-white p-4 rounded-lg">
-                <p className="text-4xl mb-4">{currentQuestion.question}</p>
-                {currentQuestion.choices.map((choice, index) => (
-                  <p key={index} className="text-4xl">
-                    {choice}
+                <div className="flex flex-col justify-between items-center">
+                  <p className="text-4xl mb-4 font-semibold">
+                    {currentQuestion.question}
                   </p>
-                ))}
-                <p className="mt-2 text-lg">
-                  Thời gian còn lại: {timeRemaining}s
-                </p>
+                  {currentQuestion.choices.map((choice, index) => (
+                    <button
+                      key={index}
+                      className="text-4xl bg-green-500 mb-5 mt-5 text-left"
+                    >
+                      {choice}
+                    </button>
+                  ))}
+                  <p className="mt-2 text-lg">
+                    Thời gian còn lại: {timeRemaining}s
+                  </p>
+                </div>
               </div>
             )}
             {Array.from({ length: GRID_SIZE }).map((_, y) => (
