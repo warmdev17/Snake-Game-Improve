@@ -213,11 +213,8 @@ export default function SnakeGame() {
 
   const handleKeyPress = (event: KeyboardEvent<HTMLDivElement>) => {
     if (showQuestion) {
-      if (["1", "2", "3", "4"].includes(event.key)) {
-        const choiceIndex = parseInt(event.key) - 1;
-        if (currentQuestion) {
-          handleQuestionAnswer(currentQuestion.choices[choiceIndex]);
-        }
+      if (["a", "b", "c", "d"].includes(event.key.toLowerCase())) {
+        handleQuestionAnswer(event.key.toUpperCase());
       }
     } else {
       if (event.key === "ArrowUp" && direction !== "DOWN") setDirection("UP");
@@ -239,7 +236,7 @@ export default function SnakeGame() {
                 key={index}
                 className="text-xl w-[150px] text-center bg-green-500 text-white rounded"
               >
-                Group {index + 1}: {score}
+                Nhóm {index + 1}: {score}
               </div>
             ))}
           </div>
