@@ -1,14 +1,19 @@
 [
   {
-    "question": "What is the capital of France?",
-    "choices": ["A. Paris", "B. Berlin", "C. Madrid", "D. Rome"],
+    "question": "Đâu là thủ đô của nước Ba Lan?",
+    "choices": ["A. Warsaw", "B. Bern", "C. Madrid", "D. Prague"],
     "correctAnswer": "A",
-    "timeLimit": 8
+    "timeLimit": 15
   },
   {
-    "question": "What is 2 + 2?",
-    "choices": ["A. 3", "B. 4", "C. 5", "D. 6"],
-    "correctAnswer": "B",
-    "timeLimit": 4
+    "question": "Ai là người sáng lập ra Đế chế Mông Cổ?",
+    "choices": [
+      "A. Genghis Khan",
+      "B. Alexander Đại đế",
+      "C. Julius Caesar",
+      "D. Napoleon Bonaparte"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 15
   }
 ]

@@ -4,6 +4,7 @@ import questions from "../public/questions.json";
 import { Montserrat } from "next/font/google";
 import Question from "./Question";
 import ScoreBoard from "./ScoreBoard";
+import GameOver from "./GameOver";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const GRID_SIZE = 30;
@@ -42,6 +43,7 @@ export default function SnakeGame() {
   const [currentGroup, setCurrentGroup] = useState<number>(0);
   const [currentTurn, setCurrentTurn] = useState<number>(1);
   const [scores, setScores] = useState<GroupScore>([0, 0, 0, 0]);
+  const [isLastTurn, setIsLastTurn] = useState(false);
 
   const generateFood = () => {
     const x = Math.floor(Math.random() * GRID_SIZE);
@@ -80,6 +82,9 @@ export default function SnakeGame() {
       )
     ) {
       setGameOver(true);
+      if (currentTurn === 12 && currentGroup === 3) {
+        setIsLastTurn(true);
+      }
       return;
     }
 
@@ -197,26 +202,43 @@ export default function SnakeGame() {
   };
 
   const handleNextGroup = () => {
-    setCurrentGroup((prevGroup) => (prevGroup + 1) % 4);
-    if (currentGroup === 3) {
-      setCurrentTurn((prevTurn) => (prevTurn + 1) % 12);
+    if (isLastTurn) {
+      // Reset game for new rounds if necessary
+      setCurrentTurn(1);
+      setCurrentGroup(0);
+      setScores([0, 0, 0, 0]); // Reset scores for all groups
+      setIsLastTurn(false);
+    } else {
+      setCurrentGroup((prevGroup) => (prevGroup + 1) % 4);
+      if (currentGroup === 3) {
+        setCurrentTurn((prevTurn) => prevTurn + 1);
+      }
     }
 
     setGameOver(false);
     setScore(0);
-    setDirection("RIGHT");
     setSnake([
       { y: 0, x: 2 },
       { y: 0, x: 1 },
       { y: 0, x: 0 },
     ]);
+    setDirection("RIGHT");
     setGameSpeed(80); // Reset speed for the new group
     setQuestionFood(null);
     generateFood();
     setCurrentQuestion(null);
     setShowQuestion(false);
     containerRef.current?.focus();
-    if (containerRef.current) containerRef.current.focus();
+  };
+
+  const getWinningGroup = () => {
+    const maxScore = Math.max(...scores);
+    const winners = scores
+      .map((score, index) => ({ group: index + 1, score }))
+      .filter((item) => item.score === maxScore);
+    return winners.length === 1
+      ? winners[0]
+      : { group: "Tie", score: maxScore }; // Handle ties
   };
 
   const handleKeyPress = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -252,15 +274,11 @@ export default function SnakeGame() {
             className={`grid grid-cols-${GRID_SIZE} grid-rows-${GRID_SIZE} border border-[#3A4F63] focus:outline-none`}
           >
             {gameOver && (
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-4xl font-bold text-red-500 bg-black bg-opacity-60">
-                HAHA gàaaaaaaaa
-                <button
-                  onClick={handleNextGroup}
-                  className="mt-4 p-2 bg-green-500 text-white rounded"
-                >
-                  Nhóm tiếp theo
-                </button>
-              </div>
+              <GameOver
+                handleNextGroup={handleNextGroup}
+                isLastTurn={isLastTurn}
+                winningGroup={isLastTurn ? getWinningGroup() : undefined}
+              />
             )}
             {showQuestion && currentQuestion && (
               <Question
@@ -298,13 +316,14 @@ export default function SnakeGame() {
           <div
             className={`flex justify-around items-center flex-col h-40 font-bold ${montserrat.className}`}
           >
-            <h1 className="text-5xl text-white">RẮN SĂN MỒI</h1>
+            <h1 className="text-5xl text-white mb-4">RẮN SĂN MỒI</h1>
             <button
               onClick={handleStartGame}
-              className="p-4 bg-green-500 text-white text-xl rounded"
+              className="p-4 bg-green-500 hover:bg-green-700 text-white text-xl rounded"
             >
               Bắt đầu
             </button>
+            <div className="text-white font-thin">designed by warmdev</div>
           </div>
         </>
       )}
