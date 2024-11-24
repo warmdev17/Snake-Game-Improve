@@ -2,6 +2,7 @@
 import { KeyboardEvent, useEffect, useRef, useState } from "react";
 import questions from "../public/questions.json";
 import { Montserrat } from "next/font/google";
+import Question from "./Question";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const GRID_SIZE = 30;
@@ -127,8 +128,12 @@ export default function SnakeGame() {
 
   const handleQuestionAnswer = (answer: string) => {
     if (timerRef.current) clearInterval(timerRef.current);
-
-    if (currentQuestion && answer === currentQuestion.correctAnswer) {
+    console.log(answer);
+    if (
+      currentQuestion &&
+      answer.trim().toLowerCase() ===
+        currentQuestion.correctAnswer.trim().toLowerCase()
+    ) {
       // Correct answer: Add 10 points
       setScore((prevScore) => prevScore + 10);
       setScores((prevScores) => {
@@ -138,13 +143,13 @@ export default function SnakeGame() {
       });
     } else {
       // Incorrect answer or time up: Deduct 5 points
-      setScore((prevScore) => prevScore - 5); // Ensure score doesn't go negative
+      setScore((prevScore) => Math.max(prevScore - 5, 0)); // Ensure score doesn't go below zero
       setScores((prevScores) => {
         const updatedScores = [...prevScores];
         updatedScores[currentGroup] = Math.max(
           updatedScores[currentGroup] - 5,
           0,
-        ); // Avoid negative score
+        ); // Ensure group score doesn't go below zero
         return updatedScores;
       });
     }
@@ -262,26 +267,17 @@ export default function SnakeGame() {
                 </button>
               </div>
             )}
-            {showQuestion && currentQuestion && (
-              <div className="absolute inset-0 flex flex-col justify-center items-center bg-gray-800 bg-opacity-75 text-white p-4 rounded-lg">
-                <div className="flex flex-col justify-between items-center">
-                  <p className="text-4xl mb-4 font-semibold">
-                    {currentQuestion.question}
-                  </p>
-                  {currentQuestion.choices.map((choice, index) => (
-                    <button
-                      key={index}
-                      className="text-4xl bg-green-500 mb-5 mt-5 text-left"
-                    >
-                      {choice}
-                    </button>
-                  ))}
-                  <p className="mt-2 text-lg">
-                    Thời gian còn lại: {timeRemaining}s
-                  </p>
-                </div>
-              </div>
-            )}
+            {
+              // {showQuestion && currentQuestion && (
+            }
+            <Question
+              currentQuestion={currentQuestion}
+              timeRemaining={timeRemaining}
+              onAnswer={handleQuestionAnswer}
+            />
+            {
+              // )}
+            }
             {Array.from({ length: GRID_SIZE }).map((_, y) => (
               <div key={y} className="flex bg-[#1e1e28]">
                 {Array.from({ length: GRID_SIZE }).map((_, x) => (
