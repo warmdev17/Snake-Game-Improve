@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes deplete {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.progress-bar-animation {
+  transform-origin: left; /* Ensures scaling starts from the left */
+  animation-fill-mode: forwards;
+}

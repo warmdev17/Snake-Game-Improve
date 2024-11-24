@@ -1,4 +1,5 @@
-"use client";
+import { Montserrat } from "next/font/google";
+const montserrat = Montserrat({ subsets: ["latin"] });
 type Question = {
   question: string;
   choices: string[];
@@ -19,18 +20,53 @@ export default function Question({
 }: QuestionDisplayProps) {
   if (!currentQuestion) return null;
 
-  // Calculate percentage of time remaining for progress bar
-  const progressWidth = (timeRemaining / currentQuestion.timeLimit) * 100;
+  const radius = 50; // radius of the circle
+  const strokeWidth = 8; // stroke width of the circle
+  const circumference = 2 * Math.PI * radius; // circumference of the circle
+
+  const offset =
+    timeRemaining > 0
+      ? circumference -
+        (timeRemaining / currentQuestion.timeLimit) * circumference
+      : circumference;
 
   return (
-    <div className="absolute inset-0 flex flex-col justify-center items-center bg-gray-800 bg-opacity-75 text-white p-4 rounded-lg">
-      {/* Timer Bar */}
-      <div className="relative w-[80%] h-4 bg-gray-500 rounded-full overflow-hidden mb-10">
-        <div
-          className="h-full bg-green-500 transition-all duration-100 ease-linear"
-          style={{ width: `${progressWidth}%` }}
-        />
-      </div>
+    <div
+      className={`absolute inset-0 flex flex-col justify-center items-center bg-gray-800 bg-opacity-75 text-white p-4 rounded-lg ${montserrat.className}`}
+    >
+      {timeRemaining > 0 && (
+        <div className="relative flex justify-center items-center mb-10">
+          <svg width="120" height="120" className="transform rotate-90">
+            <circle
+              cx="60"
+              cy="60"
+              r={radius}
+              stroke="gray"
+              strokeWidth={strokeWidth}
+              fill="none"
+              className="circle-background"
+            />
+            <circle
+              cx="60"
+              cy="60"
+              r={radius}
+              stroke="green"
+              strokeWidth={strokeWidth}
+              fill="none"
+              className="circle-timer"
+              style={{
+                strokeDasharray: circumference,
+                strokeDashoffset: offset,
+                transition: "stroke-dashoffset 1s linear",
+              }}
+            />
+          </svg>
+          <div className="absolute text-4xl font-semibold">
+            {timeRemaining}s
+          </div>
+        </div>
+      )}
+
       <div className="flex flex-col justify-between items-center">
         {/* Question Text */}
         <p className="text-4xl mb-4 font-semibold">

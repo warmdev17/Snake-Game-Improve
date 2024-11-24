@@ -3,6 +3,7 @@ import { KeyboardEvent, useEffect, useRef, useState } from "react";
 import questions from "../public/questions.json";
 import { Montserrat } from "next/font/google";
 import Question from "./Question";
+import ScoreBoard from "./ScoreBoard";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const GRID_SIZE = 30;
@@ -47,7 +48,7 @@ export default function SnakeGame() {
     const y = Math.floor(Math.random() * GRID_SIZE);
     setFood({ x, y });
 
-    if (Math.random() < 0.2) {
+    if (Math.random() < 0.25) {
       const questionX = Math.floor(Math.random() * GRID_SIZE);
       const questionY = Math.floor(Math.random() * GRID_SIZE);
       setQuestionFood({ x: questionX, y: questionY });
@@ -128,7 +129,6 @@ export default function SnakeGame() {
 
   const handleQuestionAnswer = (answer: string) => {
     if (timerRef.current) clearInterval(timerRef.current);
-    console.log(answer);
     if (
       currentQuestion &&
       answer.trim().toLowerCase() ===
@@ -155,6 +155,7 @@ export default function SnakeGame() {
     }
 
     setShowQuestion(false);
+    containerRef.current?.focus();
     generateFood();
   };
 
@@ -169,7 +170,7 @@ export default function SnakeGame() {
   // Adjust speed based on score
   useEffect(() => {
     if (score % 10 === 0 && score !== 0) {
-      setGameSpeed((prevSpeed) => prevSpeed - 10); // Increase speed
+      setGameSpeed((prevSpeed) => prevSpeed - 20); // Increase speed
     }
   }, [score]);
 
@@ -210,10 +211,12 @@ export default function SnakeGame() {
       { y: 0, x: 0 },
     ]);
     setGameSpeed(80); // Reset speed for the new group
+    setQuestionFood(null);
     generateFood();
     setCurrentQuestion(null);
     setShowQuestion(false);
     containerRef.current?.focus();
+    if (containerRef.current) containerRef.current.focus();
   };
 
   const handleKeyPress = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -235,19 +238,11 @@ export default function SnakeGame() {
     <div>
       {isGameStarted ? (
         <div className="flex items-center justify-between flex-col">
-          <div className="top-0 mt-16 text-white flex items-center justify-between w-[1200px] mb-12">
-            {scores.map((score, index) => (
-              <div
-                key={index}
-                className="text-xl w-[150px] text-center bg-green-500 text-white rounded"
-              >
-                Nhóm {index + 1}: {score}
-              </div>
-            ))}
-          </div>
-          <div className="text-white bg-green-500 rounded text-lg w-[260px] text-center">
-            Lượt: {currentTurn} - Nhóm: {currentGroup + 1}
-          </div>
+          <ScoreBoard
+            scores={scores}
+            currentGroup={currentGroup}
+            currentTurn={currentTurn}
+          />
           <div className="text-white text-xl">Điểm hiện tại: {score}</div>
           <div
             ref={containerRef}
@@ -267,17 +262,13 @@ export default function SnakeGame() {
                 </button>
               </div>
             )}
-            {
-              // {showQuestion && currentQuestion && (
-            }
-            <Question
-              currentQuestion={currentQuestion}
-              timeRemaining={timeRemaining}
-              onAnswer={handleQuestionAnswer}
-            />
-            {
-              // )}
-            }
+            {showQuestion && currentQuestion && (
+              <Question
+                currentQuestion={currentQuestion}
+                timeRemaining={timeRemaining}
+                onAnswer={handleQuestionAnswer}
+              />
+            )}
             {Array.from({ length: GRID_SIZE }).map((_, y) => (
               <div key={y} className="flex bg-[#1e1e28]">
                 {Array.from({ length: GRID_SIZE }).map((_, x) => (
