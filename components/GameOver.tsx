@@ -4,11 +4,22 @@ type Props = {
   winningGroup?: { group: string | number; score: number };
 };
 
+const annoy = [
+  "kay kay kay",
+  "quá gà",
+  "non",
+  "íu",
+  "gêm ô vờ",
+  "hahaahahahah",
+  "cay chưa",
+];
+
 export default function GameOver({
   isLastTurn,
   handleNextGroup,
   winningGroup,
 }: Props) {
+  const randomAnnoy = () => Math.floor(Math.random() * annoy.length);
   return (
     <>
       {isLastTurn ? (
@@ -25,12 +36,12 @@ export default function GameOver({
             onClick={handleNextGroup}
             className="mt-4 p-2 bg-green-500 text-white rounded"
           >
-            Play Again
+            Làm lại
           </button>
         </div>
       ) : (
         <div className="absolute inset-0 flex flex-col justify-center items-center text-4xl font-bold text-red-500 bg-black bg-opacity-60">
-          HAHA gàaaaaaaaa
+          {annoy[randomAnnoy()]}
           <button
             onClick={handleNextGroup}
             className="mt-4 p-2 bg-green-500 text-white rounded"

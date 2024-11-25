@@ -8,12 +8,12 @@
   {
     "question": "Ai là người sáng lập ra Đế chế Mông Cổ?",
     "choices": [
-      "A. Genghis Khan",
-      "B. Alexander Đại đế",
+      "A. Alexander Đại đế",
+      "B. Genghis Khan",
       "C. Julius Caesar",
       "D. Napoleon Bonaparte"
     ],
-    "correctAnswer": "A",
+    "correctAnswer": "B",
     "timeLimit": 15
   }
 ]
