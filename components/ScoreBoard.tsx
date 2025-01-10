@@ -15,7 +15,7 @@ export default function ScoreBoard({
         {scores.map((score, index) => (
           <div
             key={index}
-            className="text-xl w-[150px] text-center h-12 bg-green-500 text-white rounded flex items-center justify-center"
+            className={`text-xl w-[150px] text-center h-12 bg-[#aad751] pb-2 border-2 border-[#578a34] text-black rounded flex items-center justify-center `}
           >
             <span>
               Nhóm {index + 1}: {score}
@@ -23,8 +23,8 @@ export default function ScoreBoard({
           </div>
         ))}
       </div>
-      <div className=" bg-green-500 rounded w-[260px] text-center h-10 flex items-center justify-center">
-        <span className="text-lg text-white">
+      <div className=" bg-[#aad751] border-2 border-[#578a34] pb-2 rounded w-[260px] text-center h-10 flex items-center justify-center">
+        <span className={`text-lg text-black `}>
           Lượt: {currentTurn} - Nhóm: {currentGroup + 1}
         </span>
       </div>

@@ -32,7 +32,7 @@ export default function Question({
 
   return (
     <div
-      className={`absolute inset-0 flex flex-col justify-center items-center bg-gray-800 bg-opacity-75 text-white p-4 rounded-lg ${montserrat.className}`}
+      className={`z-50 absolute inset-0 flex flex-col justify-center items-center bg-gray-800 bg-opacity-75 text-white p-4 rounded-lg ${montserrat.className}`}
     >
       {timeRemaining > 0 && (
         <div className="relative flex justify-center items-center mb-10">
@@ -50,7 +50,7 @@ export default function Question({
               cx="60"
               cy="60"
               r={radius}
-              stroke="green"
+              stroke="#aad751"
               strokeWidth={strokeWidth}
               fill="none"
               className="circle-timer"
@@ -78,7 +78,7 @@ export default function Question({
             <button
               key={index}
               onClick={() => onAnswer(choice[0])}
-              className="text-2xl bg-green-500 hover:bg-green-700 text-white p-4 rounded"
+              className="text-2xl bg-[#aad751] hover:bg-[#578a34] text-black p-4 rounded"
             >
               {choice}
             </button>

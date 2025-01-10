@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles/globals.css */
+@font-face {
+  font-family: "Pixel";
+  src: url("/fonts/fonts.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Pixel", sans-serif;
+}
+
 @keyframes deplete {
   from {
     transform: scaleX(1);
@@ -9,6 +21,20 @@
   to {
     transform: scaleX(0);
   }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.food {
+  animation: pulse 1s infinite;
 }
 
 .progress-bar-animation {

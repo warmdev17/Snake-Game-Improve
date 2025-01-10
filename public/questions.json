@@ -1,17 +1,102 @@
 [
   {
+    "id": 0,
     "question": "Đâu là thủ đô của nước Ba Lan?",
     "choices": ["A. Warsaw", "B. Bern", "C. Madrid", "D. Prague"],
     "correctAnswer": "A",
     "timeLimit": 15
   },
   {
+    "id": 1,
     "question": "Ai là người sáng lập ra Đế chế Mông Cổ?",
     "choices": [
       "A. Alexander Đại đế",
       "B. Genghis Khan",
       "C. Julius Caesar",
       "D. Napoleon Bonaparte"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 15
+  },
+  {
+    "id": 2,
+    "question": "Đâu là thủ đô của nước Đức?",
+    "choices": ["A. Berlin", "B. Vienna", "C. Rome", "D. Amsterdam"],
+    "correctAnswer": "A",
+    "timeLimit": 15
+  },
+  {
+    "id": 3,
+    "question": "Ai là người viết 'Romeo và Juliet'?",
+    "choices": [
+      "A. William Shakespeare",
+      "B. Charles Dickens",
+      "C. Mark Twain",
+      "D. Victor Hugo"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 15
+  },
+  {
+    "id": 4,
+    "question": "Hành tinh nào gần Mặt trời nhất?",
+    "choices": ["A. Sao Kim", "B. Sao Hỏa", "C. Sao Thủy", "D. Sao Mộc"],
+    "correctAnswer": "C",
+    "timeLimit": 15
+  },
+  {
+    "id": 5,
+    "question": "Nước nào có diện tích lớn nhất thế giới?",
+    "choices": ["A. Canada", "B. Nga", "C. Mỹ", "D. Trung Quốc"],
+    "correctAnswer": "B",
+    "timeLimit": 15
+  },
+  {
+    "id": 6,
+    "question": "Nguyên tố hóa học nào có ký hiệu là 'O'?",
+    "choices": ["A. Hydro", "B. Nitơ", "C. Oxi", "D. Carbon"],
+    "correctAnswer": "C",
+    "timeLimit": 15
+  },
+  {
+    "id": 7,
+    "question": "Thành phố nào được mệnh danh là 'Kinh đô Ánh sáng'?",
+    "choices": ["A. Rome", "B. Paris", "C. London", "D. Madrid"],
+    "correctAnswer": "B",
+    "timeLimit": 15
+  },
+  {
+    "id": 8,
+    "question": "Đại dương nào lớn nhất trên thế giới?",
+    "choices": [
+      "A. Đại Tây Dương",
+      "B. Ấn Độ Dương",
+      "C. Thái Bình Dương",
+      "D. Bắc Băng Dương"
+    ],
+    "correctAnswer": "C",
+    "timeLimit": 15
+  },
+  {
+    "id": 9,
+    "question": "Kim tự tháp Ai Cập được xây dựng nhằm mục đích gì?",
+    "choices": [
+      "A. Đền thờ thần",
+      "B. Lăng mộ cho các Pharaon",
+      "C. Thư viện cổ đại",
+      "D. Trung tâm thương mại"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 15
+  },
+  {
+    "id": 10,
+    "question": "Nhà vật lý học nào phát hiện ra lực hấp dẫn?",
+    "choices": [
+      "A. Albert Einstein",
+      "B. Isaac Newton",
+      "C. Galileo Galilei",
+      "D. Stephen Hawking"
     ],
     "correctAnswer": "B",
     "timeLimit": 15

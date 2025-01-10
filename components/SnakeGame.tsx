@@ -1,13 +1,18 @@
 "use client";
 import { KeyboardEvent, useEffect, useRef, useState } from "react";
 import questions from "../public/questions.json";
-import { Montserrat } from "next/font/google";
 import Question from "./Question";
 import ScoreBoard from "./ScoreBoard";
 import GameOver from "./GameOver";
-const montserrat = Montserrat({ subsets: ["latin"] });
 
 const GRID_SIZE = 30;
+
+// sound effect
+const foodSound = new Audio("/sound_effect/pop.mp3");
+const rightSound = new Audio("/sound_effect/right.mp3");
+const wrongSound = new Audio("/sound_effect/wrong.mp3");
+const clickSound = new Audio("/sound_effect/click.mp3");
+const winningSound = new Audio("/sound_effect/winning.mp3");
 
 type Point = { x: number; y: number };
 type Direction = "UP" | "DOWN" | "LEFT" | "RIGHT";
@@ -44,6 +49,7 @@ export default function SnakeGame() {
   const [currentTurn, setCurrentTurn] = useState<number>(1);
   const [scores, setScores] = useState<GroupScore>([0, 0, 0, 0]);
   const [isLastTurn, setIsLastTurn] = useState(false);
+  const usedQuestionIndices = useRef<Set<number>>(new Set());
 
   const generateFood = () => {
     const x = Math.floor(Math.random() * GRID_SIZE);
@@ -90,8 +96,9 @@ export default function SnakeGame() {
 
     newSnake.unshift(snakeHead);
     if (snakeHead.x === food.x && snakeHead.y === food.y) {
-      setScore((prevScore) => prevScore + 1);
+      foodSound.play();
 
+      setScore((prevScore) => prevScore + 1);
       setScores((prevScores) => {
         const updatedScores = [...prevScores];
         updatedScores[currentGroup] += 1;
@@ -103,13 +110,29 @@ export default function SnakeGame() {
       snakeHead.x === questionFood.x &&
       snakeHead.y === questionFood.y
     ) {
-      const randomQuestion = questions[
-        Math.floor(Math.random() * questions.length)
-      ] as Question;
-      setCurrentQuestion(randomQuestion);
-      setShowQuestion(true);
-      setTimeRemaining(randomQuestion.timeLimit);
-      startTimer(randomQuestion.timeLimit);
+      foodSound.play();
+      const availableQuestions = questions.filter(
+        (_, index) => !usedQuestionIndices.current.has(index),
+      );
+
+      if (availableQuestions.length === 0) {
+        console.log("All questions have been used!");
+        setQuestionFood(null);
+      } else {
+        const randomIndex = Math.floor(
+          Math.random() * availableQuestions.length,
+        );
+        const selectedQuestion = availableQuestions[randomIndex];
+
+        const actualIndex = questions.findIndex((q) => q === selectedQuestion);
+        usedQuestionIndices.current.add(actualIndex);
+
+        setCurrentQuestion(selectedQuestion);
+        setShowQuestion(true);
+        setTimeRemaining(selectedQuestion.timeLimit);
+        startTimer(selectedQuestion.timeLimit);
+      }
+
       setQuestionFood(null);
     } else {
       newSnake.pop();
@@ -134,11 +157,14 @@ export default function SnakeGame() {
 
   const handleQuestionAnswer = (answer: string) => {
     if (timerRef.current) clearInterval(timerRef.current);
+    clickSound.play();
     if (
       currentQuestion &&
       answer.trim().toLowerCase() ===
         currentQuestion.correctAnswer.trim().toLowerCase()
     ) {
+      // play sound
+      rightSound.play();
       // Correct answer: Add 10 points
       setScore((prevScore) => prevScore + 10);
       setScores((prevScores) => {
@@ -146,7 +172,10 @@ export default function SnakeGame() {
         updatedScores[currentGroup] += 10;
         return updatedScores;
       });
+      console.log(gameSpeed);
     } else {
+      // play sound
+      wrongSound.play();
       // Incorrect answer or time up: Deduct 5 points
       setScore((prevScore) => Math.max(prevScore - 5, 0)); // Ensure score doesn't go below zero
       setScores((prevScores) => {
@@ -164,6 +193,13 @@ export default function SnakeGame() {
     generateFood();
   };
 
+  // Ensure the Sound Is Non-Intrusive
+  useEffect(() => {
+    foodSound.load();
+    wrongSound.load();
+    rightSound.load();
+  }, []);
+
   useEffect(() => {
     if (containerRef.current) containerRef.current.focus();
   }, [gameOver]);
@@ -175,7 +211,7 @@ export default function SnakeGame() {
   // Adjust speed based on score
   useEffect(() => {
     if (score % 10 === 0 && score !== 0) {
-      setGameSpeed((prevSpeed) => prevSpeed - 20); // Increase speed
+      setGameSpeed((prevSpeed) => prevSpeed - 10); // Increase speed
     }
   }, [score]);
 
@@ -223,7 +259,7 @@ export default function SnakeGame() {
       { y: 0, x: 0 },
     ]);
     setDirection("RIGHT");
-    setGameSpeed(80); // Reset speed for the new group
+    setGameSpeed(90); // Reset speed for the new group
     setQuestionFood(null);
     generateFood();
     setCurrentQuestion(null);
@@ -232,6 +268,7 @@ export default function SnakeGame() {
   };
 
   const getWinningGroup = () => {
+    winningSound.play();
     const maxScore = Math.max(...scores);
     const winners = scores
       .map((score, index) => ({ group: index + 1, score }))
@@ -257,21 +294,23 @@ export default function SnakeGame() {
   };
 
   return (
-    <div>
+    <>
       {isGameStarted ? (
-        <div className="flex items-center justify-between flex-col">
+        <div className="overflow-y-hidden flex items-center justify-between flex-col">
           <ScoreBoard
             scores={scores}
             currentGroup={currentGroup}
             currentTurn={currentTurn}
           />
-          <div className="text-white text-xl">Điểm hiện tại: {score}</div>
+          <div className={`text-white text-xl mb-6 text-center`}>
+            Điểm hiện tại: {score}
+          </div>
           <div
             ref={containerRef}
             onKeyDown={handleKeyPress}
             tabIndex={0}
             autoFocus
-            className={`grid grid-cols-${GRID_SIZE} grid-rows-${GRID_SIZE} border border-[#3A4F63] focus:outline-none`}
+            className={`grid grid-cols-${GRID_SIZE} grid-rows-${GRID_SIZE} border-[#578a34] border-8 focus:outline-none`}
           >
             {gameOver && (
               <GameOver
@@ -288,21 +327,21 @@ export default function SnakeGame() {
               />
             )}
             {Array.from({ length: GRID_SIZE }).map((_, y) => (
-              <div key={y} className="flex bg-[#1e1e28]">
+              <div key={y} className="flex bg-[#aad751] bg-cover bg-center ">
                 {Array.from({ length: GRID_SIZE }).map((_, x) => (
                   <div
                     key={x}
-                    className={`w-5 h-5 border-gray-300 ${
+                    className={`w-5 h-5 border-[#578a34] ${
                       snake.some(
                         (snakePart) => snakePart.x === x && snakePart.y === y,
                       )
-                        ? "bg-[#4CAF50]"
+                        ? "bg-[#4472e7] rounded-md"
                         : food.x === x && food.y === y
-                          ? "bg-[#FF5252]"
+                          ? "bg-[#FF5252] rounded-full pulse food"
                           : questionFood &&
                               questionFood.x === x &&
                               questionFood.y === y
-                            ? "bg-blue-500"
+                            ? "bg-blue-500 rounded-full pulse food"
                             : ""
                     }`}
                   ></div>
@@ -314,19 +353,21 @@ export default function SnakeGame() {
       ) : (
         <>
           <div
-            className={`flex justify-around items-center flex-col h-40 font-bold ${montserrat.className}`}
+            className={`z-20 flex justify-around items-center flex-col h-40 font-bold `}
           >
-            <h1 className="text-5xl text-white mb-4">RẮN SĂN MỒI</h1>
+            <h1 className="text-5xl text-white mb-4">Rắn săn mồi</h1>
             <button
               onClick={handleStartGame}
-              className="p-4 bg-green-500 hover:bg-green-700 text-white text-xl rounded"
+              className="p-4 bg-[#aad751] hover:bg-[#578a34] hover:text-white text-black text-xl rounded mt-4 mb-4"
             >
               Bắt đầu
             </button>
-            <div className="text-white font-thin">designed by warmdev</div>
+            <div className="text-white font-medium text-center">
+              Thiết kế và phát triển bởi warmdev
+            </div>
           </div>
         </>
       )}
-    </div>
+    </>
   );
 }

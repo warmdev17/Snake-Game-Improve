@@ -21,20 +21,20 @@ export default function GameOver({
 }: Props) {
   const randomAnnoy = () => Math.floor(Math.random() * annoy.length);
   return (
-    <>
+    <div className="z-40">
       {isLastTurn ? (
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-4xl font-bold text-red-500 bg-black bg-opacity-60">
-          <div className="text-8xl text-center p-4">🏆</div>
-          <div className="text-yellow-500 text-center">
+        <div className=" absolute inset-0 flex flex-col justify-center items-center text-4xl font-bold text-red-500 bg-black bg-opacity-60">
+          <div className="text-8xl text-center m-4 p-4">🏆</div>
+          <div className="text-yellow-500 m-4 text-center">
             Winner winner Snake Dinner
           </div>
-          <div className="text-white text-center">
+          <div className="text-white text-center m-4">
             Nhóm {winningGroup?.group}
           </div>
-          <div className="text-center">Điểm: {winningGroup?.score}</div>
+          <div className="text-center m-4">Điểm: {winningGroup?.score}</div>
           <button
             onClick={handleNextGroup}
-            className="mt-4 p-2 bg-green-500 text-white rounded"
+            className="mt-4 p-2 pb-4 bg-[#aad751] text-white rounded"
           >
             Làm lại
           </button>
@@ -44,12 +44,12 @@ export default function GameOver({
           {annoy[randomAnnoy()]}
           <button
             onClick={handleNextGroup}
-            className="mt-4 p-2 bg-green-500 text-white rounded"
+            className="mt-8 p-2 bg-[#aad751] pb-6 pt-4 text-white rounded"
           >
             Nhóm tiếp theo
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 }
