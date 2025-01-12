@@ -15,7 +15,7 @@ export default function ScoreBoard({
         {scores.map((score, index) => (
           <div
             key={index}
-            className={`text-xl w-[150px] text-center h-12 bg-[#aad751] pb-2 border-2 border-[#578a34] text-black rounded flex items-center justify-center `}
+            className={`text-xl w-[200px] text-center h-12 bg-[#aad751] pb-2 border-2 border-[#578a34] text-black rounded flex items-center justify-center `}
           >
             <span>
               Nhóm {index + 1}: {score}

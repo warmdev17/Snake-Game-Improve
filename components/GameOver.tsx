@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 type Props = {
   isLastTurn: boolean;
   handleNextGroup: () => void;
@@ -20,6 +22,18 @@ export default function GameOver({
   winningGroup,
 }: Props) {
   const randomAnnoy = () => Math.floor(Math.random() * annoy.length);
+  useEffect(() => {
+    const handleKeyPress = () => {
+      handleNextGroup();
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [handleNextGroup]);
   return (
     <div className="z-40">
       {isLastTurn ? (
@@ -48,6 +62,7 @@ export default function GameOver({
           >
             Nhóm tiếp theo
           </button>
+          <p className="text-white text-sm pt-4">Ấn phím bất kì để tiếp tục</p>
         </div>
       )}
     </div>
