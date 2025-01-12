@@ -8,11 +8,11 @@ import GameOver from "./GameOver";
 const GRID_SIZE = 30;
 
 // sound effect
-const foodSound = new Audio("/sound_effect/pop.mp3");
-const rightSound = new Audio("/sound_effect/right.mp3");
-const wrongSound = new Audio("/sound_effect/wrong.mp3");
-const clickSound = new Audio("/sound_effect/click.mp3");
-const winningSound = new Audio("/sound_effect/winning.mp3");
+let foodSound: HTMLAudioElement;
+let rightSound: HTMLAudioElement;
+let wrongSound: HTMLAudioElement;
+let clickSound: HTMLAudioElement;
+let winningSound: HTMLAudioElement;
 
 type Point = { x: number; y: number };
 type Direction = "UP" | "DOWN" | "LEFT" | "RIGHT";
@@ -192,11 +192,20 @@ export default function SnakeGame() {
     generateFood();
   };
 
-  // Ensure the Sound Is Non-Intrusive
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Initialize audio objects only on the client side
+      foodSound = new Audio("/sound_effect/pop.mp3");
+      rightSound = new Audio("/sound_effect/right.mp3");
+      wrongSound = new Audio("/sound_effect/wrong.mp3");
+      clickSound = new Audio("/sound_effect/click.mp3");
+      winningSound = new Audio("/sound_effect/winning.mp3");
+    }
     foodSound.load();
-    wrongSound.load();
     rightSound.load();
+    wrongSound.load();
+    clickSound.load();
+    winningSound.load();
   }, []);
 
   useEffect(() => {
