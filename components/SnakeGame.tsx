@@ -7,7 +7,7 @@ import GameOver from "./GameOver";
 
 const GRID_SIZE = 30;
 
-// sound effect
+// Sound effect
 let foodSound: HTMLAudioElement;
 let rightSound: HTMLAudioElement;
 let wrongSound: HTMLAudioElement;
@@ -163,7 +163,7 @@ export default function SnakeGame() {
       answer.trim().toLowerCase() ===
         currentQuestion.correctAnswer.trim().toLowerCase()
     ) {
-      // play sound
+      // Play sound
       rightSound.play();
       // Correct answer: Add 10 points
       setScore((prevScore) => prevScore + 10);
@@ -173,7 +173,7 @@ export default function SnakeGame() {
         return updatedScores;
       });
     } else {
-      // play sound
+      // Play sound
       wrongSound.play();
       // Incorrect answer or time up: Deduct 10 points
       setScore((prevScore) => Math.max(prevScore - 10, 0)); // Ensure score doesn't go below zero
@@ -196,6 +196,7 @@ export default function SnakeGame() {
     if (typeof window !== "undefined") {
       // Initialize audio objects only on the client side
       foodSound = new Audio("/sound_effect/pop.mp3");
+      foodSound.volume = 0.2;
       rightSound = new Audio("/sound_effect/right.mp3");
       wrongSound = new Audio("/sound_effect/wrong.mp3");
       clickSound = new Audio("/sound_effect/click.mp3");
@@ -225,7 +226,7 @@ export default function SnakeGame() {
       setNextSpeedThreshold((prevThreshold) => prevThreshold + 10);
       console.log(gameSpeed);
     }
-  }, [score]);
+  }, [score, gameSpeed, nextSpeedThreshold]);
 
   useEffect(() => {
     if (!isGameStarted || gameOver) return;
@@ -370,6 +371,9 @@ export default function SnakeGame() {
             className={`z-20 flex justify-around items-center flex-col h-40 font-bold `}
           >
             <h1 className="text-5xl text-white mb-4">Rắn săn mồi</h1>
+            <span className="rotate-45 relative left-[200px] bottom-20 text-red-500 blink">
+              improve
+            </span>
             <button
               onClick={handleStartGame}
               className="p-4 bg-[#aad751] hover:bg-[#578a34] hover:text-white text-black text-xl rounded mt-4 mb-4"

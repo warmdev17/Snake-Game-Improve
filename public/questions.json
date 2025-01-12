@@ -1,8 +1,8 @@
 [
   {
     "id": 0,
-    "question": "Đâu là thủ đô của nước Ba Lan?",
-    "choices": ["A. Warsaw", "B. Bern", "C. Madrid", "D. Prague"],
+    "question": "Đâu là thủ đô của nước Venezuela?",
+    "choices": ["A. Warsaw", "B. Caracas", "C. Madrid", "D. Prague"],
     "correctAnswer": "A",
     "timeLimit": 15
   },
@@ -20,9 +20,9 @@
   },
   {
     "id": 2,
-    "question": "Đâu là thủ đô của nước Đức?",
+    "question": "Đâu là thủ đô của nước Áo?",
     "choices": ["A. Berlin", "B. Vienna", "C. Rome", "D. Amsterdam"],
-    "correctAnswer": "A",
+    "correctAnswer": "B",
     "timeLimit": 15
   },
   {
@@ -39,10 +39,10 @@
   },
   {
     "id": 4,
-    "question": "Hành tinh nào gần Mặt trời nhất?",
+    "question": "Hành tinh nào đứng thứ 5 trong hệ Mặt Trời?",
     "choices": ["A. Sao Kim", "B. Sao Hỏa", "C. Sao Thủy", "D. Sao Mộc"],
-    "correctAnswer": "C",
-    "timeLimit": 15
+    "correctAnswer": "D",
+    "timeLimit": 10
   },
   {
     "id": 5,

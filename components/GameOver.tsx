@@ -23,8 +23,10 @@ export default function GameOver({
 }: Props) {
   const randomAnnoy = () => Math.floor(Math.random() * annoy.length);
   useEffect(() => {
-    const handleKeyPress = () => {
-      handleNextGroup();
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (event.key === "Enter") {
+        handleNextGroup();
+      }
     };
 
     window.addEventListener("keydown", handleKeyPress);
@@ -62,7 +64,7 @@ export default function GameOver({
           >
             Nhóm tiếp theo
           </button>
-          <p className="text-white text-sm pt-4">Ấn phím bất kì để tiếp tục</p>
+          <p className="text-white text-sm pt-4">Ấn Enter để tiếp tục</p>
         </div>
       )}
     </div>
