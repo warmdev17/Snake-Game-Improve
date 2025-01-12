@@ -172,16 +172,15 @@ export default function SnakeGame() {
         updatedScores[currentGroup] += 10;
         return updatedScores;
       });
-      console.log(gameSpeed);
     } else {
       // play sound
       wrongSound.play();
-      // Incorrect answer or time up: Deduct 5 points
-      setScore((prevScore) => Math.max(prevScore - 5, 0)); // Ensure score doesn't go below zero
+      // Incorrect answer or time up: Deduct 10 points
+      setScore((prevScore) => Math.max(prevScore - 10, 0)); // Ensure score doesn't go below zero
       setScores((prevScores) => {
         const updatedScores = [...prevScores];
         updatedScores[currentGroup] = Math.max(
-          updatedScores[currentGroup] - 5,
+          updatedScores[currentGroup] - 10,
           0,
         ); // Ensure group score doesn't go below zero
         return updatedScores;
@@ -209,9 +208,13 @@ export default function SnakeGame() {
   }, [isGameStarted]);
 
   // Adjust speed based on score
+  const [nextSpeedThreshold, setNextSpeedThreshold] = useState(10);
+
   useEffect(() => {
-    if (score % 10 === 0 && score !== 0) {
-      setGameSpeed((prevSpeed) => prevSpeed - 10); // Increase speed
+    if (score >= nextSpeedThreshold) {
+      setGameSpeed((prevSpeed) => Math.max(prevSpeed - 10, 30)); // Ensure a minimum speed
+      setNextSpeedThreshold((prevThreshold) => prevThreshold + 10);
+      console.log(gameSpeed);
     }
   }, [score]);
 
@@ -232,7 +235,8 @@ export default function SnakeGame() {
       { y: 0, x: 0 },
     ]);
     setDirection("RIGHT");
-    setGameSpeed(80); // Reset speed when starting a new game
+    setGameSpeed(90); // Reset speed when starting a new game
+    setNextSpeedThreshold(10); // Reset speed threshold
     generateFood();
     containerRef.current?.focus();
   };
@@ -260,6 +264,7 @@ export default function SnakeGame() {
     ]);
     setDirection("RIGHT");
     setGameSpeed(90); // Reset speed for the new group
+    setNextSpeedThreshold(10); // Reset speed threshold
     setQuestionFood(null);
     generateFood();
     setCurrentQuestion(null);
@@ -335,7 +340,7 @@ export default function SnakeGame() {
                       snake.some(
                         (snakePart) => snakePart.x === x && snakePart.y === y,
                       )
-                        ? "bg-[#4472e7] rounded-md"
+                        ? "bg-[#4472e7]"
                         : food.x === x && food.y === y
                           ? "bg-[#FF5252] rounded-full pulse food"
                           : questionFood &&
