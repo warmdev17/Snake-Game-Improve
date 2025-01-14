@@ -38,7 +38,7 @@ export default function SnakeGame() {
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [showQuestion, setShowQuestion] = useState<boolean>(false);
   const [timeRemaining, setTimeRemaining] = useState<number>(0);
-  const [gameSpeed, setGameSpeed] = useState<number>(90); // Initial game speed
+  const [gameSpeed, setGameSpeed] = useState<number>(110); // Initial game speed
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const questionTimerRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -245,7 +245,7 @@ export default function SnakeGame() {
       { y: 0, x: 0 },
     ]);
     setDirection("RIGHT");
-    setGameSpeed(90); // Reset speed when starting a new game
+    setGameSpeed(110); // Reset speed when starting a new game
     setNextSpeedThreshold(10); // Reset speed threshold
     generateFood();
     containerRef.current?.focus();
@@ -273,7 +273,7 @@ export default function SnakeGame() {
       { y: 0, x: 0 },
     ]);
     setDirection("RIGHT");
-    setGameSpeed(90); // Reset speed for the new group
+    setGameSpeed(110); // Reset speed for the new group
     setNextSpeedThreshold(10); // Reset speed threshold
     setQuestionFood(null);
     generateFood();
