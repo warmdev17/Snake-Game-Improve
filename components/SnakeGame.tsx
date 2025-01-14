@@ -224,7 +224,9 @@ export default function SnakeGame() {
     if (score >= nextSpeedThreshold) {
       setGameSpeed((prevSpeed) => Math.max(prevSpeed - 10, 30)); // Ensure a minimum speed
       setNextSpeedThreshold((prevThreshold) => prevThreshold + 10);
-      console.log(gameSpeed);
+      console.log(
+        `Current turn: ${currentTurn}, current group: ${currentGroup + 1}, game speed: ${gameSpeed}`,
+      );
     }
   }, [score, gameSpeed, nextSpeedThreshold]);
 
