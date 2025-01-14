@@ -23,7 +23,7 @@
     "question": "Đâu là thủ đô của nước Áo?",
     "choices": ["A. Berlin", "B. Vienna", "C. Rome", "D. Amsterdam"],
     "correctAnswer": "B",
-    "timeLimit": 15
+    "timeLimit": 12
   },
   {
     "id": 3,
@@ -35,7 +35,7 @@
       "D. Victor Hugo"
     ],
     "correctAnswer": "A",
-    "timeLimit": 15
+    "timeLimit": 9
   },
   {
     "id": 4,
@@ -46,16 +46,16 @@
   },
   {
     "id": 5,
-    "question": "Nước nào có diện tích lớn nhất thế giới?",
+    "question": "Nước nào có diện tích lớn hai thế giới?",
     "choices": ["A. Canada", "B. Nga", "C. Mỹ", "D. Trung Quốc"],
-    "correctAnswer": "B",
+    "correctAnswer": "C",
     "timeLimit": 15
   },
   {
     "id": 6,
-    "question": "Nguyên tố hóa học nào có ký hiệu là 'O'?",
-    "choices": ["A. Hydro", "B. Nitơ", "C. Oxi", "D. Carbon"],
-    "correctAnswer": "C",
+    "question": "Động cơ Leopard 1 được phóng thành công vào ngày nào?",
+    "choices": ["A. 6/1/25", "B. 28/12/24", "C. 7/1/25", "D. 2/1/25"],
+    "correctAnswer": "A",
     "timeLimit": 15
   },
   {
@@ -67,27 +67,22 @@
   },
   {
     "id": 8,
-    "question": "Đại dương nào lớn nhất trên thế giới?",
+    "question": "Đại dương nào lớn nhì trên thế giới?",
     "choices": [
       "A. Đại Tây Dương",
       "B. Ấn Độ Dương",
       "C. Thái Bình Dương",
       "D. Bắc Băng Dương"
     ],
-    "correctAnswer": "C",
-    "timeLimit": 15
+    "correctAnswer": "A",
+    "timeLimit": 13
   },
   {
     "id": 9,
-    "question": "Kim tự tháp Ai Cập được xây dựng nhằm mục đích gì?",
-    "choices": [
-      "A. Đền thờ thần",
-      "B. Lăng mộ cho các Pharaon",
-      "C. Thư viện cổ đại",
-      "D. Trung tâm thương mại"
-    ],
+    "question": "Nếu một cái hồ có một loài hoa nở phủ kín mặt nước sau 48 ngày, và mỗi ngày số hoa tăng gấp đôi, thì đến ngày thứ bao nhiêu sẽ phủ kín một nửa hồ?",
+    "choices": ["A. 24 ngày", "B. 47 ngày", "C. 12 ngày", "D. 46 ngày"],
     "correctAnswer": "B",
-    "timeLimit": 15
+    "timeLimit": 14
   },
   {
     "id": 10,
