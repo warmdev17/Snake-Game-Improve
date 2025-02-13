@@ -427,17 +427,22 @@
   },
   {
     "id": 45,
-    "question": "Quần gì không bao giờ mặc được?",
-    "choices": ["A.Quần đảo", "B.Quần giấy", "C.Quần vợt", "D.Quần bò"],
-    "correctAnswer": "A",
-    "timeLimit": 10
+    "question": "Ngọn núi nào xa tâm Trái Đất nhất?",
+    "choices": ["A. Everest", "B. K2", "C. Denali", "D. Chimborazo"],
+    "correctAnswer": "D",
+    "timeLimit": 15
   },
   {
     "id": 46,
-    "question": "",
-    "choices": ["A.", "B.", "C.", "D."],
-    "correctAnswer": "",
-    "timeLimit": null
+    "question": "Hồ nào sâu nhất thế giới?",
+    "choices": [
+      "A. Hồ Tanganyika",
+      "B. Hồ Baikal",
+      "C. Hồ Caspi",
+      "D. Hồ Victoria"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 15
   },
   {
     "id": 47,
@@ -570,10 +575,10 @@
   },
   {
     "id": 64,
-    "question": "",
-    "choices": ["A.", "B.", "C.", "D."],
-    "correctAnswer": "",
-    "timeLimit": null
+    "question": "Lục địa nào có điểm thấp nhất so với mực nước biển?",
+    "choices": ["A. Châu Phi", "B. Châu Á", "C. Châu Úc", "D. Châu Nam Cực"],
+    "correctAnswer": "A",
+    "timeLimit": 15
   },
   {
     "id": 65,
@@ -889,7 +894,7 @@
       "C. chèo",
       "D. lễ hội chọi trâu Đồ Sơn"
     ],
-    "correctAnswer": "",
-    "timeLimit": null
+    "correctAnswer": "D",
+    "timeLimit": 14
   }
 ]
