@@ -53,8 +53,13 @@
   },
   {
     "id": 6,
-    "question": "Động cơ Leopard 1 được phóng thành công vào ngày nào?",
-    "choices": ["A. 6/1/25", "B. 28/12/24", "C. 7/1/25", "D. 2/1/25"],
+    "question": "Đâu là nhà phát minh ra đèn LED xanh",
+    "choices": [
+      "A. Shuji Nakamura",
+      "B. Nick Holonyak Jr",
+      "C. Oleg Losev",
+      "D. Hervert Maruska"
+    ],
     "correctAnswer": "A",
     "timeLimit": 15
   },
@@ -79,8 +84,8 @@
   },
   {
     "id": 9,
-    "question": "Nếu một cái hồ có một loài hoa nở phủ kín mặt nước sau 48 ngày, và mỗi ngày số hoa tăng gấp đôi, thì đến ngày thứ bao nhiêu sẽ phủ kín một nửa hồ?",
-    "choices": ["A. 24 ngày", "B. 47 ngày", "C. 12 ngày", "D. 46 ngày"],
+    "question": "Đâu là câu trả lời đúng",
+    "choices": ["A. Đây", "B. Đúng", "C. 12 ngày", "D. 46 ngày"],
     "correctAnswer": "B",
     "timeLimit": 14
   },
@@ -94,6 +99,797 @@
       "D. Stephen Hawking"
     ],
     "correctAnswer": "B",
+    "timeLimit": 5
+  },
+
+  {
+    "id": 11,
+    "question": "Hiện tượng \"nguyệt thực\" xảy ra khi:",
+    "choices": [
+      "A. Mặt Trăng đi vào bóng của Trái Đất",
+      "B. Trái Đất đi vào bóng của Mặt Trăng",
+      "C. Mặt Trời đi vào bóng của Trái Đất",
+      "D. Mặt Trăng đi vào bóng của Mặt Trời"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 12,
+    "question": "Thuyết Big Bang khẳng định rằng vũ trụ bắt đầu từ:",
+    "choices": [
+      "A. Một vụ nổ siêu lớn",
+      "B. Sự kết hợp của nhiều thiên hà",
+      "C. Một cơn bão từ các sao",
+      "D. Sự va chạm của hai thiên hà"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 13,
+    "question": "Hố đen là kết quả của sự sụp đổ của:",
+    "choices": [
+      "A. Một hành tinh",
+      "B. Một ngôi sao có khối lượng lớn",
+      "C. Một thiên hà",
+      "D. Một hành tinh lùn"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 14,
+    "question": "Tinh vân là:",
+    "choices": [
+      "A. Một hệ thống hành tinh",
+      "B. Một đám mây khí và bụi trong không gian, nơi hình thành sao",
+      "C. Một loại hành tinh",
+      "D. Một thiên hà nhỏ"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 15,
+    "question": "Hiện tượng \"sao băng\" là:",
+    "choices": [
+      "A. Một ngôi sao rơi",
+      "B. Một hành tinh đi qua",
+      "C. Mảnh vụn không gian bốc cháy khi đi qua bầu khí quyển Trái Đất",
+      "D. Tia sáng từ Mặt Trời"
+    ],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 16,
+    "question": "Chòm sao Orion nổi tiếng với đặc điểm:",
+    "choices": [
+      "A. Là nơi chứa nhiều hành tinh",
+      "B. Dễ nhận diện với những ngôi sao sáng tạo thành hình người thợ săn",
+      "C. Chứa hố đen lớn nhất vũ trụ",
+      "D. Là trung tâm của Dải Ngân Hà"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 17,
+    "question": "Sao chổi là gì?",
+    "choices": [
+      "A. Một thiên thể rời rạc có đuôi sáng khi tiến gần Mặt Trời",
+      "B. Một thiên thể quay quanh Trái Đất",
+      "C. Một hành tinh không phát sáng",
+      "D. Một loại hành tinh nhỏ"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 18,
+    "question": "Vật chất chủ yếu cấu tạo nên vũ trụ là gì?",
+    "choices": [
+      "A. Cát và đá",
+      "B. Khí và plasma",
+      "C. Nước và băng",
+      "D. Kim loại và gỗ"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 19,
+    "question": "Hành tinh nào có hệ thống vành đai nổi bật nhất trong Hệ Mặt Trời?",
+    "choices": [
+      "A. Sao Thiên Vương",
+      "B. Sao Thổ",
+      "C. Sao Hải Vương",
+      "D. Sao Mộc"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 20,
+    "question": "Tàu vũ trụ Voyager 1 được phóng đi vào năm nào?",
+    "choices": ["A. 1970", "B. 1972", "C. 1977", "D. 1980"],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 21,
+    "question": "Dự kiến, Dải Ngân Hà và thiên hà Andromeda sẽ va chạm với nhau sau khoảng thời gian là:",
+    "choices": ["A. 1 tỷ năm", "B. 2 tỷ năm", "C. 4 tỷ năm", "D. 8 tỷ năm"],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 22,
+    "question": "Hiện tượng “ánh sáng đỏ” (redshift) trong vũ trụ thường liên quan đến việc:",
+    "choices": [
+      "A. Các thiên thể di chuyển về phía chúng ta",
+      "B. Các thiên thể di chuyển ra xa",
+      "C. Sự lão hóa của các ngôi sao",
+      "D. Sự hấp thụ ánh sáng của bụi không gian"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 23,
+    "question": "Đơn vị đo khoảng cách giữa các ngôi sao thường được sử dụng trong thiên văn học là:",
+    "choices": [
+      "A. Năm ánh sáng",
+      "B. Đơn vị thiên văn (AU)",
+      "C. Parsec",
+      "D. Kilomet"
+    ],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 24,
+    "question": "Sự mở rộng của vũ trụ được chứng minh qua hiện tượng nào?",
+    "choices": [
+      "A. Sự gia tăng số lượng thiên hà",
+      "B. Sự giảm nhiệt độ của không gian",
+      "C. Hiện tượng dịch chuyển đỏ (redshift)",
+      "D. Sự gia tăng của lực hấp dẫn"
+    ],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 25,
+    "question": "Vệ tinh nhân tạo đầu tiên của con người quay quanh Trái Đất là:",
+    "choices": ["A. Sputnik 1", "B. Apollo 11", "C. Explorer 1", "D. Hubble"],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 26,
+    "question": "Các ngôi sao trong một tinh vân thường hình thành từ:",
+    "choices": [
+      "A. Các vụ nổ siêu tân tinh",
+      "B. Đám mây khí và bụi trong không gian",
+      "C. Sự va chạm giữa các hành tinh",
+      "D. Năng lượng từ bức xạ vũ trụ"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 27,
+    "question": "Hố đen thường được tạo ra khi:",
+    "choices": [
+      "A. Một ngôi sao trung bình chuyển sang trạng thái lùn trắng",
+      "B. Một ngôi sao khổng lồ có khối lượng lớn sụp đổ",
+      "C. Một hành tinh bị vỡ ra thành mảnh vụn",
+      "D. Một thiên hà va chạm với thiên hà khác"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 28,
+    "question": "Chỉ số độ sáng tuyệt đối (absolute magnitude) của một sao cho biết độ sáng của sao đó khi đặt ở khoảng cách:",
+    "choices": [
+      "A. Từ Trái Đất",
+      "B. 10 parsec",
+      "C. 1 AU",
+      "D. 1 năm ánh sáng"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 29,
+    "question": "1. Nguyên tố nào nhẹ nhất trong bảng tuần hoàn?",
+    "choices": ["A.hydro", "B.carbon", "Nitơ", "D.liti"],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 30,
+    "question": "Nước chiếm khoảng bao nhiêu phần trăm trọng lượng cơ thể người trưởng thành?",
+    "choices": ["Khoảng 50%", "Khoảng 70%", "C.Khoảng 60%", "D.Khoảng 40%"],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 31,
+    "question": "Cây xanh hấp thụ khí gì từ môi trường để quang hợp?",
+    "choices": ["A.O2", "B.N2", "C.O3", "D.CO2"],
+    "correctAnswer": "D",
+    "timeLimit": 10
+  },
+  {
+    "id": 32,
+    "question": "Loài chim nào có thể bay lùi?",
+    "choices": ["A.Chim ruồi", "B.Bồ câu", "C. Hải âu", "D.Con cọ"],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 33,
+    "question": "Kim loại nào dẫn điện tốt nhất?",
+    "choices": ["A.Bạc", "B.Chì", "C.Đồng", "D.Sắt"],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 34,
+    "question": "Hệ cơ quan nào chịu trách nhiệm vận chuyển oxy trong cơ thể?",
+    "choices": [
+      "A.Hệ thần kinh",
+      "B.Hệ bài tiết",
+      "C.Hệ tuần hoàn",
+      "D.Hệ tiêu hoá"
+    ],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 35,
+    "question": "Nước nào có diện tích lớn nhất thế giới?",
+    "choices": ["A.Canada", "B.Nga", "C.Trung Quốc", "D.Mỹ"],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 36,
+    "question": "Con sông dài nhất thế giới là gì?",
+    "choices": [
+      "A.Sông Nile",
+      "B.Sông Hồng",
+      "C.Sông Mỏ Cày",
+      "D.Sông Trường Giang"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 37,
+    "question": "Dãy núi nào cao nhất thế giới?",
+    "choices": ["A.Dãy Trường Sơn", "B.Andes", "C.Rockey", "D.Hymalaya"],
+    "correctAnswer": "D",
+    "timeLimit": 10
+  },
+  {
+    "id": 38,
+    "question": "Quốc gia nào có dân số đông nhất thế giới?",
+    "choices": ["A.Nga", "B.Trung Quốc", "C.Ấn Độ", "Mỹ"],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 39,
+    "question": "Triều đại phong kiến cuối cùng của Việt Nam là gì?",
+    "choices": ["A.Nhà Nguyễn", "B.Nhà Hồ", "C.Nhà Trần", "D.Nhà Lê"],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 40,
+    "question": "Cuộc cách mạng công nghiệp lần đầu tiên bắt đầu ở nước nào?",
+    "choices": ["A.Mỹ", "B.Nga", "C.Pháp", "D.Anh"],
+    "correctAnswer": "D",
+    "timeLimit": 10
+  },
+  {
+    "id": 41,
+    "question": "Nhạc cụ nào có 88 phím?",
+    "choices": ["A.Guitar", "B.Piano", "C.Saxophone", "D.Phong Cầm"],
+    "correctAnswer": "B",
     "timeLimit": 15
+  },
+  {
+    "id": 42,
+    "question": "Môn thể thao nào được mệnh danh là môn thể thao vua?",
+    "choices": ["A.Bóng rỗ", "B.Bóng chuyền", "C.Bóng đá", "D.Bóng bàn"],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 43,
+    "question": "Vào tháng nào con người sẽ ngủ ít nhất trong năm?",
+    "choices": ["A.Tháng 1", "B.Tháng 2", "C.Tháng 3", "D.Tháng 4"],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 44,
+    "question": "Cái gì luôn đi đến nhưng không bao giờ đến nơi?",
+    "choices": ["A.Tàu hoả", "B.Mặt trời", "C.Ngày mai", "D.Sóng biển"],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 45,
+    "question": "Quần gì không bao giờ mặc được?",
+    "choices": ["A.Quần đảo", "B.Quần giấy", "C.Quần vợt", "D.Quần bò"],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 46,
+    "question": "",
+    "choices": ["A.", "B.", "C.", "D."],
+    "correctAnswer": "",
+    "timeLimit": null
+  },
+  {
+    "id": 47,
+    "question": "Trong thần thoại La mã,Vị thần tạo ra con người từ bùn đất và đánh cắp ngọn lửa để trao cho nhân loại là:",
+    "choices": ["A. Zeus", "B. Prometheus", "C. Epimetheus ", "D. Hephaetus "],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 48,
+    "question": "Tên gọi khác của thần Neptune trong thần thoại Hy Lạp là gì?",
+    "choices": ["A. Prometheus", "B. Poseidon", "C. Zeus", "D. Hermes"],
+    "correctAnswer": "B",
+    "timeLimit": 8
+  },
+  {
+    "id": 49,
+    "question": "Quái vật ba đầu nào canh giữ địa ngục trong thần thoại La Mã?",
+    "choices": ["A. Centaur", "B. Gorgon", "C. Cerberus", "D. Chimera"],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 50,
+    "question": "Trong thần thoại Bắc Âu, ai là vị thần tối cao và cai quản Asgard?",
+    "choices": ["A. Thor", "B. Loki", "C. Odin", "D. Ymir"],
+    "correctAnswer": "C",
+    "timeLimit": 15
+  },
+  {
+    "id": 51,
+    "question": "Trong thần thoại Hy Lạp - La Mã, vị anh hùng nổi tiếng nhất với 12 chiến công hiển hách chính là",
+    "choices": ["A. Heracles ", "B. Achilles", "C. Odysseus", "D. Theseus"],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 52,
+    "question": "Achilles là một chiến binh huyền thoại trong cuộc chiến thành Troy, Nhưng ông có 1 điểm yếu và đó là:",
+    "choices": ["A. Cổ tay", "B. Chân ", "C. Gót chân", "D. Tai"],
+    "correctAnswer": "C",
+    "timeLimit": 14
+  },
+  {
+    "id": 53,
+    "question": "Trong thần thoại Bắc Âu thần sấm sét Thor có một món vũ khí thần thoại là:",
+    "choices": ["A. Mjolnir ", "B. Gungnir ", "C. Dainsleif ", "D. Tyrfing "],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 54,
+    "question": "Đâu là sinh vật trong thần thoại Bắc Âu:",
+    "choices": ["A. Fenrir", "B. Gorgon", "C. Cerberus", "D. Hydra"],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 55,
+    "question": "Thần Amaterasu của Nhật Bản là thần của ",
+    "choices": ["A. Mặt trời", "B. Mặt trăng", "C. Mặt đất", "D. Biển"],
+    "correctAnswer": "A",
+    "timeLimit": 12
+  },
+  {
+    "id": 56,
+    "question": "Thần Susanoo của Nhật Bản là thần của",
+    "choices": ["A. Mặt trăng", "B. Biển", "C. Bão tố", "D. Gió"],
+    "correctAnswer": "C",
+    "timeLimit": 12
+  },
+  {
+    "id": 57,
+    "question": "Con quái vật bị thần Susanoo chém đầu trong thần thoại Nhật Bản là:",
+    "choices": ["A. Yamata no Orochi", "B. Ryu", "C. Kitsune", "D. Kappa"],
+    "correctAnswer": "A",
+    "timeLimit": 12
+  },
+  {
+    "id": 58,
+    "question": "Trong thần thoại Ai Cập thần Ra là thần của",
+    "choices": ["A. Mặt trời", "B. Biển", "C. Gió", "D. Vũ  trụ"],
+    "correctAnswer": "A",
+    "timeLimit": 12
+  },
+  {
+    "id": 59,
+    "question": "Vị thần tối cao của Thần thoại Ai Cập là:",
+    "choices": ["A. Anubis", "B. Horus", "C.Ra", "D. Osiris"],
+    "correctAnswer": "C",
+    "timeLimit": 12
+  },
+  {
+    "id": 60,
+    "question": "Vị thần được mệnh danh là vua của các vị thần trong thần thoại Hy lạp- La mã là:",
+    "choices": ["A. Zeus", "B. Poseidon", "C. Hermes", "D. Hades"],
+    "correctAnswer": "A",
+    "timeLimit": 12
+  },
+  {
+    "id": 61,
+    "question": "Tên của một vị thần Ai Cập đại diện cho ướp xác và cái chết:",
+    "choices": ["A. Anubis", "B. Ra", "C. Holactie", "D. Horus"],
+    "correctAnswer": "A",
+    "timeLimit": 12
+  },
+  {
+    "id": 62,
+    "question": "Được sinh ra từ đá,Đại náo thiên cung, Đấu chiến thắng phật, nhân vật của 1 trong tứ đại danh tác Trung Hoa:",
+    "choices": [
+      "A. Tôn Ngộ Không",
+      "B. Lý Tịnh",
+      "C. Triệu Vân",
+      "D. Đường Tăng"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 5
+  },
+  {
+    "id": 63,
+    "question": "Tên thật của Gậy Như Ý của Tề Thiên Đại Thánh",
+    "choices": [
+      "A. Định Hải Thần Châm ",
+      "B. Kim Cang ",
+      "C. Lung Linh Bảo Tháp",
+      "D. Chuông Tử Kim"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 5
+  },
+  {
+    "id": 64,
+    "question": "",
+    "choices": ["A.", "B.", "C.", "D."],
+    "correctAnswer": "",
+    "timeLimit": null
+  },
+  {
+    "id": 65,
+    "question": "Nếu bạn có nó mà không thể chia sẻ, bạn có cái gì?",
+    "choices": ["A. Bí mật", "B. Niềm tin", "C. Tình yêu", "D. Tiền bạc"],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 66,
+    "question": "Cái gì càng nhìn lâu càng mờ đi?",
+    "choices": ["A. Ánh sáng", "B. Cơn giận", "C. Cái bóng", "D. Sương mù"],
+    "correctAnswer": "D",
+    "timeLimit": 10
+  },
+  {
+    "id": 67,
+    "question": "Cái gì luôn luôn nóng nhưng lại không cháy được? ",
+    "choices": ["A. Mặt trời", "B. Lửa", "C. Sắt ", "D. Máy sấy tóc"],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 68,
+    "question": "Cái gì chỉ có một mà lại có thể chia sẻ cho nhiều người?",
+    "choices": ["A. Tình yêu", "B. Thời gian", "C. Bí mật", "D. Kỹ năng"],
+    "correctAnswer": "B",
+    "timeLimit": 15
+  },
+  {
+    "id": 69,
+    "question": "Cái gì càng chia ra càng lớn? ",
+    "choices": ["A. Bánh", "B. Đám mây", "C. Lửa", "D. Nước"],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 70,
+    "question": "Cái gì không có mắt mà vẫn có thể nhìn thấy? ",
+    "choices": ["A. Bóng tối", "B. Gương", "C. Ánh sáng", "D. Cái bóng"],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 71,
+    "question": "Điều gì bạn chỉ có thể làm khi mất đi? ",
+    "choices": ["A.Cảm xúc", "B. Tiền", "C. Thời gian", "D. Niềm tin"],
+    "correctAnswer": "C",
+    "timeLimit": 15
+  },
+  {
+    "id": 72,
+    "question": "Sea games 32 tổ chức ở nước nào?",
+    "choices": ["A. Lào", "B. Thái Lan", "C. Campuchia", "D. Malaysia"],
+    "correctAnswer": "C",
+    "timeLimit": 15
+  },
+  {
+    "id": 73,
+    "question": "Việt Nam giành huy chương vàng Olympic đầu tiên ở nội dung bắn súng nào?",
+    "choices": [
+      "A. Súng trường",
+      "B. Súng ngắn bắn nhanh",
+      "C. Súng trường 3 tư thế",
+      "D. Súng ngắn"
+    ],
+    "correctAnswer": "D",
+    "timeLimit": 15
+  },
+  {
+    "id": 74,
+    "question": "Nơi lạnh nhất thế giới là ở đâu? ",
+    "choices": ["A. Bắc cực", "B. Nam cực", "C. Pháp", "D. Trái tim crush"],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 75,
+    "question": "Chùa một cột xây dựng dựa trên hình tượng loại hoa nào?",
+    "choices": ["A. Hoa Đào", "B. Hoa cúc", "C. Hoa sen", "D. Hoa lan"],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 76,
+    "question": "Trong dịp sinh nhật của người Hàn Quốc thường ăn món gì?",
+    "choices": [
+      "A. Canh rong biển",
+      "B. Canh sườn bò",
+      "C. Bánh kem",
+      "D. Bánh gạo cay"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 77,
+    "question": "Năm 2025 là năm Ất Tỵ vậy năm 2026 là năm gì?",
+    "choices": ["A. Giáp Ngọ", "B. Bính Ngọ ", "C. Đinh Ngọ", "D. Nhâm Ngọ"],
+    "correctAnswer": "C",
+    "timeLimit": 15
+  },
+  {
+    "id": 78,
+    "question": "Động vật chạy nhanh nhất thế giới?",
+    "choices": ["A. Thỏ", "B. Sư tử", "C.Báo", "D. Mèo rừng"],
+    "correctAnswer": "C",
+    "timeLimit": 10
+  },
+  {
+    "id": 79,
+    "question": "Quốc gia xuất khẩu cà phê nhiều nhất thế giới?",
+    "choices": ["A. Trung Quốc", "B. Ấn Độ", "C. Việt Nam", "D. Bazil"],
+    "correctAnswer": "D",
+    "timeLimit": 15
+  },
+  {
+    "id": 80,
+    "question": "Nghị định 168 quy định người chạy xe máy tham gia giao thông vượt đèn đỏ (không gây tai nạn) phạt tiền bao nhiêu cho 1 trường hợp?",
+    "choices": [
+      "A.5-10 triệu",
+      "B. 4-6 triệu",
+      "C. 7-12 triệu",
+      "D. trên 10 triệu"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 15
+  },
+  {
+    "id": 81,
+    "question": "Tổ chức bảo vệ trẻ em của Liên Hợp Quốc có tên viết tắt là gì?",
+    "choices": ["A. UFO", "B. UNICEF ", "C. IMF", "D. UNICON"],
+    "correctAnswer": "B",
+    "timeLimit": 10
+  },
+  {
+    "id": 82,
+    "question": "Quốc kỳ nước nào có hình con chim đại bàng ngặm con rắn?",
+    "choices": ["A. Cộng hoà Séc", "B. Ả Rập", "C. Mexico", "D. Bỉ"],
+    "correctAnswer": "C",
+    "timeLimit": 15
+  },
+  {
+    "id": 83,
+    "question": "triều đại nào mở đầu cho thời đại phong kiến độc lập của dân tộc ta?",
+    "choices": [
+      "A. triều Ngô ",
+      "B. triều Tiền Lê",
+      "C. Triều. Đinh",
+      "D. Triều Nguyễn"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 10
+  },
+  {
+    "id": 84,
+    "question": "vị vua nào có nhiều vợ nhất nhưng lại không có con? ",
+    "choices": ["A. Hàm Nghi", "B. Tự Đức", "C. Lê Thần Tông", "D. Minh Mạng"],
+    "correctAnswer": "B",
+    "timeLimit": 15
+  },
+  {
+    "id": 85,
+    "question": "văn miếu Quốc Tử Giám, trường Đại học đầu tiên của Việt Nam được xây dựng vào triều đại nào? ",
+    "choices": ["A. Lê", "B. Lý", "C. Trần ", "D. Nguyễn"],
+    "correctAnswer": "B",
+    "timeLimit": 20
+  },
+  {
+    "id": 86,
+    "question": "Lệ chi viên là khu vườn trồng loại cây gì?",
+    "choices": ["A. Bưởi", "B. Táo", "C. sa kê", "D. vải"],
+    "correctAnswer": "D",
+    "timeLimit": 20
+  },
+  {
+    "id": 87,
+    "question": "Vị vua nào đã lãnh đạo cuộc kháng chiến chống quân Mông-Nguyên lần thứ nhất?",
+    "choices": [
+      "A. Trần Thái Tông",
+      "B. Trần Thánh Tông",
+      "C. Trần Nhân Tông",
+      "D. Trần Anh Tông"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 20
+  },
+  {
+    "id": 88,
+    "question": "Ai là tác giả của bài thơ Nam quốc sơn hà?",
+    "choices": [
+      "A. Lý Thường Kiệt",
+      "B. Trần Quang Khải",
+      "C. Nguyễn Trãi",
+      "D. Lê Thánh Tông"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 20
+  },
+  {
+    "id": 89,
+    "question": "Câu nói Dân ta phải biết sử ta, cho tường gốc tích nước nhà là của ai?",
+    "choices": [
+      "A. Hồ Chí Minh",
+      "B. Phạm Văn Đồng",
+      "C. Trường Chinh",
+      "D. Lê Duẩn"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 20
+  },
+  {
+    "id": 90,
+    "question": "Sự kiện lịch sử nào đã đánh dấu sự kết thúc của chế độ phong kiến ở Việt Nam?",
+    "choices": [
+      "A. Cách mạng tháng Tám năm 1945",
+      "B. Chiến thắng Điện Biên Phủ năm 1954",
+      "C. Hiệp định Giơnevơ năm 1954",
+      "D.  Sự kiện 30 tháng 4 năm 1975]"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 20
+  },
+  {
+    "id": 91,
+    "question": "Hịch tướng sĩ là tác phẩm nổi tiếng của ai?",
+    "choices": [
+      "A. Lý Thường Kiệt",
+      "B. Trần Hưng Đạo",
+      "C. Nguyễn Trãi",
+      "D. Lê Thánh Tông"
+    ],
+    "correctAnswer": "B",
+    "timeLimit": 20
+  },
+  {
+    "id": 92,
+    "question": "Tên gọi Đại Việt được sử dụng dưới triều đại nào?",
+    "choices": ["A. Lý ", "B. Lê Sơ", "C. Trần ", "D. Nguyễn"],
+    "correctAnswer": "C",
+    "timeLimit": 20
+  },
+  {
+    "id": 93,
+    "question": "Ai là vị Chủ tịch đầu tiên của nước Việt Nam Dân chủ Cộng hòa?",
+    "choices": [
+      "A. Hồ Chí Minh",
+      "B. Tôn Đức Thắng",
+      "C. Lê Duẩn",
+      "D. Trường Chinh"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 20
+  },
+  {
+    "id": 94,
+    "question": "Ai là người đã lãnh đạo cuộc khởi nghĩa Lam Sơn?",
+    "choices": [
+      "A. Lê Lợi",
+      "B. Nguyễn Trãi",
+      "C. Trần Hưng Đạo",
+      "D. Quang Trung"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 20
+  },
+  {
+    "id": 95,
+    "question": "Sông nào sau đây là con sông dài nhất thế giới?",
+    "choices": [
+      "A. sông nile",
+      "B. sống amazon",
+      "C. sông Dương Tử",
+      "D. sông missisippi"
+    ],
+    "correctAnswer": "A",
+    "timeLimit": 20
+  },
+  {
+    "id": 96,
+    "question": "Đâu là quốc gia có nhiều đảo nhất trên thế giới?",
+    "choices": ["A. Philippines", "B. Indonesia", "C. nhật bản", "D. Maldives"],
+    "correctAnswer": "B",
+    "timeLimit": 20
+  },
+  {
+    "id": 97,
+    "question": "Loại nhạc cụ nào sau đây thường được sử dụng trong ca trù?",
+    "choices": ["A. Đàn bâù", "B. Đàn tỳ bà", "C. sáo trúc", "D. trống cơm"],
+    "correctAnswer": "B",
+    "timeLimit": 20
+  },
+  {
+    "id": 98,
+    "question": "Văn hóa ẩm thực của Việt Nam có ảnh hưởng bởi quốc gia nào sau đây?",
+    "choices": ["A. ấn Độ", "B. nhật bản", "C. trung quốc", "D. hàn quốc"],
+    "correctAnswer": "C",
+    "timeLimit": 20
+  },
+  {
+    "id": 99,
+    "question": "Tỉnh thành nào của Việt Nam nổi tiếng với lễ hội Nghinh Ông?",
+    "choices": ["A. đà nẵng", "B. huế", "C. cần Thơ", "D. vũng tàu"],
+    "correctAnswer": "D",
+    "timeLimit": 20
+  },
+  {
+    "id": 100,
+    "question": "Loại hình nghệ thuật nào sau đây không phải là di sản văn hóa phi vật thể của Việt Nam?",
+    "choices": [
+      "A. hát xoan",
+      "B. ca trù",
+      "C. chèo",
+      "D. lễ hội chọi trâu Đồ Sơn"
+    ],
+    "correctAnswer": "",
+    "timeLimit": null
   }
 ]
